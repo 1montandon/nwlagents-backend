@@ -15,6 +15,13 @@
       "when": 1753317938641,
       "tag": "0001_lumpy_domino",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1755286365298,
+      "tag": "0002_rare_sentinels",
+      "breakpoints": true
     }
   ]
 }
