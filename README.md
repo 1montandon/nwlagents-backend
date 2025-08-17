@@ -1,6 +1,6 @@
 # NLW Agents Backend 🚀
 
-*Developed during Next Level Week Agents by Rocketseat*
+_Developed during Next Level Week Agents by Rocketseat_
 
 ## Description
 
@@ -22,24 +22,29 @@ This project demonstrates modern backend development practices with type-safe AP
 ## Technologies Used
 
 ### Backend Framework & Runtime
+
 - **Node.js** - JavaScript runtime with experimental TypeScript support
 - **Fastify** - High-performance web framework
 - **TypeScript** - Type-safe JavaScript development
 
 ### Database & ORM
+
 - **PostgreSQL** with **pgvector** extension - Vector database for embeddings
 - **Drizzle ORM** - Type-safe database toolkit
 - **Drizzle Kit** - Database migrations and schema management
 
 ### AI & Processing
+
 - **Google Gemini AI** - Audio transcription and text generation
 - **Vector Embeddings** - Semantic search capabilities
 
 ### Validation & Type Safety
+
 - **Zod** - Schema validation
 - **fastify-type-provider-zod** - Type-safe API routes
 
 ### Development Tools
+
 - **Biome** - Fast linter and formatter
 - **Docker Compose** - Development environment setup
 - **Ultracite** - Development utilities
@@ -55,19 +60,22 @@ This project demonstrates modern backend development practices with type-safe AP
 ### Step-by-step Setup
 
 1. **Clone the repository**
+
    ```bash
    git clone https://github.com/1montandon/nwlagents-backend.git
    cd nwlagents-backend
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Set up environment variables**
-   
+
    Create a `.env` file in the root directory:
+
    ```env
    PORT=3333
    DATABASE_URL=postgresql://docker:docker@localhost:5432/agents
@@ -75,16 +83,19 @@ This project demonstrates modern backend development practices with type-safe AP
    ```
 
 4. **Start the PostgreSQL database**
+
    ```bash
    docker-compose up -d
    ```
 
 5. **Run database migrations**
+
    ```bash
    npm run db:migrate
    ```
 
 6. **Seed the database (optional)**
+
    ```bash
    npm run db:seed
    ```
@@ -101,14 +112,17 @@ The API will be available at `http://localhost:3333`
 ### API Endpoints
 
 #### Health Check
+
 ```http
 GET /health
 ```
+
 Returns server status.
 
 #### Room Management
 
 **Create a Room**
+
 ```http
 POST /rooms
 Content-Type: application/json
@@ -120,11 +134,13 @@ Content-Type: application/json
 ```
 
 **Get All Rooms**
+
 ```http
 GET /rooms
 ```
 
 **Get Room Questions**
+
 ```http
 GET /rooms/{roomId}/questions
 ```
@@ -132,6 +148,7 @@ GET /rooms/{roomId}/questions
 #### Audio Processing
 
 **Upload Audio**
+
 ```http
 POST /rooms/{roomId}/audio
 Content-Type: multipart/form-data
@@ -142,6 +159,7 @@ Content-Type: multipart/form-data
 #### Question Generation
 
 **Create Question**
+
 ```http
 POST /rooms/{roomId}/questions
 Content-Type: application/json
@@ -181,11 +199,11 @@ npm run db:seed
 
 ### Environment Variables
 
-| Variable | Description | Required | Default |
-|----------|-------------|----------|---------|
-| `PORT` | Server port number | No | `3333` |
-| `DATABASE_URL` | PostgreSQL connection string | Yes | - |
-| `GEMINI_API_KEY` | Google Gemini API key for AI features | Yes | - |
+| Variable         | Description                           | Required | Default |
+| ---------------- | ------------------------------------- | -------- | ------- |
+| `PORT`           | Server port number                    | No       | `3333`  |
+| `DATABASE_URL`   | PostgreSQL connection string          | Yes      | -       |
+| `GEMINI_API_KEY` | Google Gemini API key for AI features | Yes      | -       |
 
 ### Database Configuration
 
